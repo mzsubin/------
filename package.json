@@ -8,11 +8,12 @@
     "start": "ui5 serve -o index.html"
   },
   "devDependencies": {
-    "@ui5/cli": "^3"
+    "@ui5/cli": "^3.10.3"
   },
   "dependencies": {
     "@cds/core": "^6.12.0",
     "@sap/cds": "^7.9.2",
+    "@sap/cds-compiler": "^4.9.4",
     "webapp": "^0.0.2"
   }
 }
