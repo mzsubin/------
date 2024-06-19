@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>예제 페이지</title>
+    <title>UI5 Workthrough</title>
     <script
       id="sap-ui-bootstrap"
       src="resources/sap-ui-core.js"
@@ -10,11 +10,18 @@
       data-sap-ui-libs="sap.m"
       data-sap-ui-compatVersion="edge"
       data-sap-ui-async="true"
-      data-sap-ui-onInit="module:ui5/walkthrough/index"
+      data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
       data-sap-ui-resourceroots='{
 			"ui5.walkthrough": "./"
 		}'
     ></script>
   </head>
-  <body class="sapUiBody" id="content"></body>
+  <body class="sapUiBody" id="content">
+    <div
+      data-sap-ui-component
+      data-name="ui5.walkthrough"
+      data-id="container"
+      data-setting='{"id" : "workthrough"}'
+    ></div>
+  </body>
 </html>

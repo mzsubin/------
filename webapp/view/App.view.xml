@@ -1,8 +1,40 @@
 <mvc:View
-  controllerName="ui5.walkthrough.controller.App"
-  xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
-  <!-- <Text text="홈페이지 흠냥흠"/> -->
-  <Button  text="{i18n>showClickButtonText}"  press=".onShowClick"/>
-  <Input value="{/recipient/name}" description="당신의 입력 : {/recipient/name}" valueLiveUpdate="true" width="60%"/>
+   controllerName="ui5.walkthrough.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+   <App>
+      <pages>
+         <Page title="{i18n>homePageTitle}">
+            <content>
+               <Panel
+                  headerText="{i18n>clickPanelTitle}">
+                  <content>
+                     <Button
+                        text="{i18n>showClickButtonText}"
+                        press=".onShowClick"/>
+                     <Input
+                        value="{/recipient/name}"
+                        description="Hello {/recipient/name}"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                  </content>
+               </Panel>
+               <Panel
+                  headerText="{i18n>clickPanelTitle}">
+                  <content>
+                     <Button
+                        text="{i18n>showClickButtonText}"
+                        press=".onShowClick2"/>
+                     <Input
+                        value="{/recipient2/name}"
+                        description="Hello {/recipient2/name}"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                  </content>
+               </Panel>
+            </content>
+         </Page>
+      </pages>
+   </App>
 </mvc:View>
