@@ -3,6 +3,6 @@
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <!-- <Text text="홈페이지 흠냥흠"/> -->
-  <Button  text="Say Hello"
-           press=".onShowClick"/>
+  <Button  text="{i18n>showClickButtonText}"  press=".onShowClick"/>
+  <Input value="{/recipient/name}" description="당신의 입력 : {/recipient/name}" valueLiveUpdate="true" width="60%"/>
 </mvc:View>
