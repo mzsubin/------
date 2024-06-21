@@ -1,23 +1,29 @@
-<mvc:View
+<!-- <mvc:View
    controllerName="ui5.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
   displayBlock="true">
-   <App>
+  <Shell backgroundColor="grey">
+   <App class="myAppDemoWT">
       <pages>
          <Page title="{i18n>homePageTitle}">
             <content>
                <Panel
-                  headerText="{i18n>clickPanelTitle}">
+                  headerText="{i18n>clickPanelTitle}"
+                  class="sapUiResponsiveMargin"
+                  width="auto">
                   <content>
                      <Button
                         text="{i18n>showClickButtonText}"
-                        press=".onShowClick"/>
+                        press=".onShowClick"
+                        class="myCustomButton"/>
                      <Input
                         value="{/recipient/name}"
                         description="Hello {/recipient/name}"
                         valueLiveUpdate="true"
                         width="60%"/>
+                       <FormattedText htmlText="Hello {/recipient/name}" 
+                                        class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
                   </content>
                </Panel>
                <Panel
@@ -37,4 +43,24 @@
          </Page>
       </pages>
    </App>
+   </Shell>
+</mvc:View> -->
+
+<!-- Nested View를 만들기 위한 뷰 재정의 -->
+<mvc:View controllerName="ui5.walkthrough.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true">
+	<Shell>
+		<App class="myAppDemoWT">
+			<pages>
+				<Page title="{i18n>homePageTitle}">
+					<content>
+						<mvc:XMLView viewName="ui5.walkthrough.view.ClickPanel"/>
+                  <mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
 </mvc:View>

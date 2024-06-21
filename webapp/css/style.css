@@ -1,0 +1,13 @@
+/* 웹테이지를 꾸미기 위한 별도의 코딩 공간 : 버튼 디자인, 여백 등 */
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
+  margin-right: 0.125rem;
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+  margin-left: 0.125rem;
+}
+
+.myAppDemoWT .myCustomText {
+  display: inline-block;
+  font-weight: bold;
+}

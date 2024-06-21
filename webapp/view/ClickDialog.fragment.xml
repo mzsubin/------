@@ -1,0 +1,19 @@
+<!-- Fragment : 여러 뷰에 걸쳐 재사용 할 수 있도록 정의하거나 간편하게 다른 내용으로 대체할 수 있는 미니멀 뷰  -->
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+   <Dialog
+      id="clickDialog"
+      title="다이얼로그 {/recipient/name}">
+      <core:Icon
+        src= "sap-icon://accessibility"
+        size="4rem"
+        class= "sapUiMediumMargin"/>
+        <Text text="{i18n>innerDialogText}"></Text>
+      <beginButton>
+         <Button
+            text="{i18n>dialogCloseButtonText}"
+            press=".onCloseDialog"/>
+      </beginButton>
+      </Dialog>
+</core:FragmentDefinition>

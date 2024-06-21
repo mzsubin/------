@@ -7,6 +7,8 @@
 //     "sap/ui/model/resource/ResourceModel",
 //   ],
 
+// const { version } = require("@sap/cds-compiler");
+
 //   (Controller, MessageToast, JSONModel, ResourceModel) => {
 //     //여기서 선언한 클래스 중 사용할 이벤트 선언
 //     "use strict";
@@ -42,36 +44,80 @@
 //     });
 //   }
 // );
-sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "sap/m/MessageToast"],
-  (Controller, MessageToast) => {
-    "use strict";
 
-    return Controller.extend("ui5.walkthrough.controller.App", {
-      onShowClick() {
-        // read msg from i18n model
-        const oBundle = this.getView().getModel("i18n").getResourceBundle();
-        const sRecipient = this.getView()
-          .getModel()
-          .getProperty("/recipient/name");
-        console.log(sRecipient);
-        const sMsg = oBundle.getText("clickMsg", [sRecipient]);
+// version.2
+// sap.ui.define(
+//   ["sap/ui/core/mvc/Controller", "sap/m/MessageToast"],
+//   (Controller, MessageToast) => {
+//     "use strict";
 
-        // show message
-        MessageToast.show(sMsg);
-      },
+//     return Controller.extend("ui5.walkthrough.controller.App", {
+//       onShowClick() {
+//         // read msg from i18n model
+//         const oBundle = this.getView().getModel("i18n").getResourceBundle();
+//         const sRecipient = this.getView()
+//           .getModel()
+//           .getProperty("/recipient/name");
+//         console.log(sRecipient);
+//         const sMsg = oBundle.getText("clickMsg", [sRecipient]);
 
-      //2번째 패널
-      onShowClick2() {
-        const oBundle = this.getView().getModel("i18n").getResourceBundle();
-        const sRecipient2 = this.getView()
-          .getModel()
-          .getProperty("/recipient2/name");
-        const sMsg = oBundle.getText("clickMsg", [sRecipient2]);
+//         // show message
+//         MessageToast.show(sMsg);
+//       },
 
-        // show message
-        MessageToast.show(sMsg);
-      },
-    });
-  }
-);
+//       //2번째 패널
+//       onShowClick2() {
+//         const oBundle = this.getView().getModel("i18n").getResourceBundle();
+//         const sRecipient2 = this.getView()
+//           .getModel()
+//           .getProperty("/recipient2/name");
+//         const sMsg = oBundle.getText("clickMsg", [sRecipient2]);
+
+//         // show message
+//         MessageToast.show(sMsg);
+//       },
+//     });
+//   }
+// );
+
+// // version3 - if써서 메시지 한번에 뿌려주기
+// sap.ui.define(
+//   ["sap/ui/core/mvc/Controller", "sap/m/MessageToast"],
+//   (Controller, MessageToast) => {
+//     "use strict";
+
+//     return Controller.extend("ui5.walkthrough.controller.App", {
+//       onShowClick() {
+//         // read msg from i18n model
+//         const oBundle = this.getView().getModel("i18n").getResourceBundle();
+//         const sRecipient = this.getView()
+//           .getModel()
+//           .getProperty("/recipient/name");
+//         console.log(sRecipient);
+//         const sMsg = oBundle.getText("clickMsg", [sRecipient]);
+
+//         // show message
+//         MessageToast.show(sMsg);
+//       },
+
+//       //2번째 패널
+//       onShowClick2() {
+//         const oBundle = this.getView().getModel("i18n").getResourceBundle();
+//         const sRecipient2 = this.getView()
+//           .getModel()
+//           .getProperty("/recipient2/name");
+//         const sMsg = oBundle.getText("clickMsg", [sRecipient2]);
+
+//         // show message
+//         MessageToast.show(sMsg);
+//       },
+//     });
+//   }
+// );
+
+//ver4. Nested View control을 위한 분리
+sap.ui.define(["sap/ui/core/mvc/Controller"], (Controller) => {
+  "use strict";
+
+  return Controller.extend("ui5.walkthrough.controller.App", {});
+});
